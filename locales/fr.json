@@ -1,0 +1,19 @@
+{
+  "block.file_operations.advanced": "Réglages avancés",
+  "block.file_operations.apply_hint": "Modifications locales jusqu’à Appliquer. Redémarrez un Run chargé pour utiliser les nouveaux réglages.",
+  "block.file_operations.last_state": "Dernier résultat",
+  "block.file_operations.invalid_json": "Saisissez un JSON valide avant d’appliquer.",
+  "block.file_operations.invalid_number": "Vérifiez la valeur numérique et ses limites.",
+  "block.file_operations.saved": "Paramètres appliqués.",
+  "block.file_operations.model.title": "Opérations de fichiers",
+  "block.file_operations.model.description": "Planifier et approuver des copies, déplacements et quarantaines bornés, sans écrasement.",
+  "block.file_operations.role": "Planifier avant d’appliquer",
+  "block.file_operations.error": "Échec des opérations de fichiers : {detail}",
+  "block.file_operations.help_allowed_root": "Périmètre existant obligatoire pour les sources et destinations. Vide : planification et modifications désactivées.",
+  "block.file_operations.help_allowed_operations": "Opérations autorisées : copy, move, quarantine. Aucun écrasement ; les dossiers parents doivent exister.",
+  "block.file_operations.help_plan_ttl_sec": "Délai d’approbation du plan. L’accord doit correspondre à son empreinte et sa révision exactes.",
+  "block.file_operations.help_max_operations": "Nombre maximal d’opérations explicites par plan. Ni récursion sur les dossiers ni jokers.",
+  "block.file_operations.help_max_bytes": "Volume total des fichiers sources par plan, en octets.",
+  "block.file_operations.help_max_plans": "Nombre maximal de plans conservés dans le journal du bloc ; aucun nettoyage automatique.",
+  "block.file_operations.help_timeout_sec": "Délai de planification ou d’application ; une application partielle produit un reçu explicite."
+}

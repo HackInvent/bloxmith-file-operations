@@ -1,0 +1,152 @@
+{
+  "kind": "file_operations",
+  "version": "0.1.0",
+  "title": "File Operations",
+  "description": "Plan and explicitly approve bounded file copies, moves and quarantine without overwrites.",
+  "repository_url": "https://github.com/HackInvent/bloxmith-file-operations",
+  "bloxsmith_compatibility": [
+    "1.0.9"
+  ],
+  "tested_with_bloxsmith": "1.0.9",
+  "prerequisites": [
+    {"type": "manual", "name": "POSIX host with descriptor-relative, no-follow file operations and an explicitly configured writable root."}
+  ],
+  "locales": {
+    "en": "locales/en.json",
+    "fr": "locales/fr.json"
+  },
+  "ports": {
+    "inputs": [
+      {
+        "id": 1,
+        "name": "request",
+        "title": "request",
+        "accepts": [
+          "application/json",
+          "text/plain",
+          "file/path",
+          "message/*"
+        ],
+        "multiplicity": "one",
+        "required": false,
+        "execution_requirement": "not_required_for_execution"
+      },
+      {
+        "id": 2,
+        "name": "decision",
+        "title": "decision",
+        "accepts": [
+          "application/json",
+          "text/plain",
+          "file/path",
+          "message/*"
+        ],
+        "multiplicity": "one",
+        "required": false,
+        "execution_requirement": "not_required_for_execution"
+      }
+    ],
+    "outputs": [
+      {
+        "id": 1,
+        "name": "plan",
+        "title": "plan",
+        "emits": [
+          "application/json",
+          "message/*"
+        ],
+        "multiplicity": "many"
+      },
+      {
+        "id": 2,
+        "name": "receipt",
+        "title": "receipt",
+        "emits": [
+          "application/json",
+          "message/*"
+        ],
+        "multiplicity": "many"
+      },
+      {
+        "id": 3,
+        "name": "issues",
+        "title": "issues",
+        "emits": [
+          "application/json",
+          "message/*"
+        ],
+        "multiplicity": "many"
+      }
+    ]
+  },
+  "config": {
+    "allowed_root": "",
+    "allowed_operations": [
+      "copy",
+      "move",
+      "quarantine"
+    ],
+    "max_operations": 20,
+    "max_bytes": 10485760,
+    "plan_ttl_sec": 900,
+    "max_plans": 1000,
+    "timeout_sec": 30
+  },
+  "port_capabilities": {
+    "can_add_inputs": false,
+    "can_add_outputs": false
+  },
+  "runtime": {
+    "initial_state": "waiting",
+    "runtime_executable": true,
+    "active_worker": true,
+    "centralized_executor": "generic",
+    "centralized_dependency_mode": "any_event",
+    "file_browser": true,
+    "active_execution_policy": "on_each_event"
+  },
+  "ui_assets": {
+    "modal": [
+      {
+        "kind": "css",
+        "path": "assets/css/properties.css"
+      },
+      {
+        "kind": "js",
+        "path": "assets/js/properties.js"
+      },
+      {
+        "kind": "js",
+        "path": "assets/js/settings.js"
+      },
+      {
+        "kind": "js",
+        "path": "assets/js/block_modal.js"
+      }
+    ],
+    "inspector_panel": [
+      {
+        "kind": "css",
+        "path": "assets/css/properties.css"
+      },
+      {
+        "kind": "js",
+        "path": "assets/js/properties.js"
+      },
+      {
+        "kind": "js",
+        "path": "assets/js/settings.js"
+      },
+      {
+        "kind": "js",
+        "path": "assets/js/inspector_panel.js"
+      }
+    ],
+    "node_card": [
+      {
+        "kind": "css",
+        "path": "assets/css/node_card.css"
+      }
+    ]
+  }
+}

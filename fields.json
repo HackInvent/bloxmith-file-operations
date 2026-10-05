@@ -1,0 +1,52 @@
+[
+  {
+    "key": "allowed_root",
+    "type": "directory",
+    "help": "Required existing boundary for all sources and targets. Blank disables planning and changes."
+  },
+  {
+    "key": "allowed_operations",
+    "type": "json",
+    "rows": 3,
+    "help": "Allowed operations: copy, move, quarantine. Targets are never overwritten and parents must exist."
+  },
+  {
+    "key": "plan_ttl_sec",
+    "type": "integer",
+    "min": 10,
+    "max": 86400,
+    "help": "Time allowed to approve a plan. Approval must match its exact digest and revision."
+  },
+  {
+    "key": "max_operations",
+    "type": "integer",
+    "min": 1,
+    "max": 100,
+    "advanced": true,
+    "help": "Maximum explicit operations per plan. No recursive folder operations or wildcards."
+  },
+  {
+    "key": "max_bytes",
+    "type": "integer",
+    "min": 1024,
+    "max": 52428800,
+    "advanced": true,
+    "help": "Combined source bytes per plan."
+  },
+  {
+    "key": "max_plans",
+    "type": "integer",
+    "min": 1,
+    "max": 10000,
+    "advanced": true,
+    "help": "Maximum retained plans in this block's ledger; no automatic deletion."
+  },
+  {
+    "key": "timeout_sec",
+    "type": "integer",
+    "min": 1,
+    "max": 120,
+    "advanced": true,
+    "help": "Bounded planning or apply duration; a partial apply produces an explicit receipt."
+  }
+]

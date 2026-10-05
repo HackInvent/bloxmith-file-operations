@@ -1,0 +1,19 @@
+{
+  "block.file_operations.advanced": "Advanced settings",
+  "block.file_operations.apply_hint": "Changes remain local until Apply. Restart a loaded Run to use new settings.",
+  "block.file_operations.last_state": "Last result",
+  "block.file_operations.invalid_json": "Enter valid JSON before applying.",
+  "block.file_operations.invalid_number": "Check the numeric value and its limits.",
+  "block.file_operations.saved": "Settings applied.",
+  "block.file_operations.model.title": "File Operations",
+  "block.file_operations.model.description": "Plan and explicitly approve bounded file copies, moves and quarantine without overwrites.",
+  "block.file_operations.role": "Plan before applying",
+  "block.file_operations.error": "File operation failed: {detail}",
+  "block.file_operations.help_allowed_root": "Required existing boundary for all sources and targets. Blank disables planning and changes.",
+  "block.file_operations.help_allowed_operations": "Allowed operations: copy, move, quarantine. Targets are never overwritten and parents must exist.",
+  "block.file_operations.help_plan_ttl_sec": "Time allowed to approve a plan. Approval must match its exact digest and revision.",
+  "block.file_operations.help_max_operations": "Maximum explicit operations per plan. No recursive folder operations or wildcards.",
+  "block.file_operations.help_max_bytes": "Combined source bytes per plan.",
+  "block.file_operations.help_max_plans": "Maximum retained plans in this block's ledger; no automatic deletion.",
+  "block.file_operations.help_timeout_sec": "Bounded planning or apply duration; a partial apply produces an explicit receipt."
+}
